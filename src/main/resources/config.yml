@@ -1,0 +1,153 @@
+# ==================== ACE for DRS Plugin Configuration ====================
+# language: "zh" = Chinese only (default), "en" = English only, "both" = bilingual
+language: zh
+
+# ==================== System 1: Enchant Downgrade ====================
+
+# Check interval for all online players (seconds, 180 = 3 minutes)
+check-online-seconds: 180
+
+# Check container contents when a player opens a chest/barrel/etc.
+check-on-container-open: true
+
+# Write scan logs to plugins/ACEforDRS/logs/ directory
+log-to-file: true
+
+# Broadcast when a 255 enchant is downgraded
+broadcast-on-fix: true
+
+# Keep unbreaking 255 without downgrading (true = keep)
+keep-unbreaking-255: true
+
+# Remove enchants that cannot legitimately exist on an item (e.g. Protection on a sword)
+remove-invalid-enchants: true
+
+# Respect server-registered max enchant level (e.g. from data packs)
+respect-server-max-level: true
+
+# Shulker box & Bundle recursion depth (0 = skip, 1-6 = layers)
+shulker-check-depth: 3
+
+# Check player inventory on join
+check-on-join: true
+
+# Check ender chest on join (in addition to inventory)
+check-ender-chest-on-join: true
+
+# Delay before on-join check (ticks)
+join-check-delay-ticks: 20
+
+# ==================== System 2: Illegal Item Detection ====================
+
+# Replace illegal items / abnormal NBT with "Rolling Log" (OAK_LOG)
+# Affects non-OP players only. Illegal materials, abnormal attributes, abnormal potions.
+delete-illegal-items: true
+
+# Broadcast when an illegal item is replaced
+broadcast-on-delete: true
+
+# Attribute modifier absolute value threshold (NaN/infinity always flagged).
+# Non-whitelisted items additionally use per-attribute sanity limits
+# (e.g. max health 100, attack damage 100, interaction range 16).
+max-attribute-amount: 1000
+
+# Backup items before replacement (saved to plugins/ACEforDRS/backups/)
+backup-before-delete: true
+
+# Custom illegal items list (Material names, in addition to built-in list)
+# Examples: PLAYER_HEAD, TOTEM_OF_UNDYING, ENCHANTED_GOLDEN_APPLE
+custom-illegal-items:
+  # - PLAYER_HEAD
+  # - TOTEM_OF_UNDYING
+
+# ==================== Trusted Item Whitelist ====================
+# Items matching any rule below are skipped entirely by both systems.
+# Intended for Slimefun / addon gear (e.g. Infinity Expansion armor with
+# Unbreaking XXV). Whitelisted items are never downgraded or deleted.
+whitelist:
+  enabled: true
+
+  # PersistentDataContainer namespaces considered trusted.
+  # Slimefun stores its item id under the "slimefun" namespace; addons
+  # that use their own namespace can be listed here too.
+  pdc-namespaces:
+    - slimefun
+    - sf_addon
+    - infinityexpansion
+    - infinitylib
+    - infinity_expansion
+
+  # Extra Material names to trust (exact Bukkit Material names).
+  materials: []
+
+  # Case-insensitive substrings of the item's display name.
+  # WARNING: a player can rename any item, so keep this list empty unless you
+  # really need it. Slimefun/addon items are already detected by their PDC
+  # namespace above.
+  name-contains: []
+
+  # Enchantment key -> maximum level treated as legitimate.
+  # This is a global allowance, so keep only the over-level enchants that
+  # your Slimefun addon actually uses.
+  enchants:
+    unbreaking: 25
+
+# ==================== Potion Detection ====================
+
+# Maximum number of effects on a single potion item
+potion-max-effects: 6
+
+# Maximum amplifier level (0-based, so 9 = level 10).
+# This is only a global ceiling for unknown/custom effects; vanilla effects
+# use their own per-effect limits (e.g. Slowness VI from Turtle Master II).
+potion-max-potency: 9
+
+# Maximum duration in ticks for non-instant effects (12000 = 10 minutes)
+potion-max-duration: 12000
+
+# ==================== Notification Cooldown ====================
+
+# Cooldown in seconds between notifications to the same player (0 = no cooldown)
+# Prevents chat spam when scanning many items at once
+notification-cooldown-seconds: 3
+
+# Scan ground items (dropped items) for illegal items (seconds, 0 = disabled)
+# If found, the item is removed and a broadcast is sent
+ground-item-scan-seconds: 40
+
+# Check active potion/status effects on players (seconds)
+# Effects above vanilla limits are downgraded while keeping their duration.
+effect-check-seconds: 15
+
+# ==================== Arrow Speed Limiting ====================
+
+# Enable arrow speed and damage limiting (prevents arrow acceleration hacks)
+# Three-layer defense: launch capping + periodic scan + damage capping
+arrow-speed-enabled: true
+
+# Maximum arrow velocity (blocks/tick). Vanilla bow max ~3.0, crossbow ~4.0.
+# Arrows exceeding this speed will be capped on launch or removed in flight.
+arrow-max-speed: 5.0
+
+# Maximum arrow damage cap. Vanilla max ~12.5 (crossbow + Power V).
+# Damage exceeding this value will be reduced to this cap.
+arrow-max-damage: 30
+
+# Periodic scan interval for flying arrows (seconds). Checks for mid-flight speed hacks.
+arrow-scan-seconds: 5
+
+# ==================== Melee Hit Guard ====================
+
+# When an attacker's hit deals at least this much damage, inspect the held
+# item immediately. Items with impossible attributes or illegal data cancel
+# the hit and are removed/downgraded on the spot. Set to 0 to check every hit.
+melee-check-enabled: true
+melee-check-min-damage: 30
+
+# ==================== Admin ====================
+
+# Admins are the only players treated differently: they may use admin-only
+# items, so System 2 (illegal item deletion / attribute & potion checks) skips
+# their items. Every other check (enchant downgrade, effects, arrows,
+# containers, inventory scans) still applies to admins.
+admin-permission: anti255.admin

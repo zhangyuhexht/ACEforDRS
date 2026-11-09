@@ -1,0 +1,119 @@
+# ==================== ACE for DRS Language Messages ====================
+# Language is configured in config.yml: `language: zh | en | both`.
+# A `language:` key added here still takes precedence for backwards compatibility.
+
+illegal-item-detected:
+  zh: "§9[ACE for DRS] §b检测到违禁/异常NBT物品，已替换为《滚木》"
+  en: "§9[ACE for DRS] §bDetected illegal / abnormal NBT item, replaced with 《Rolling Log》"
+
+illegal-item-detail:
+  zh: "§9[ACE for DRS] §b在 §f{location} §b发现 §f{item} §b（{reason}）§b，已替换为《滚木》"
+  en: "§9[ACE for DRS] §bFound §f{item} §bat §f{location} §b({reason})§b, replaced with 《Rolling Log》"
+
+enchant-downgraded:
+  zh: "§9[ACE for DRS] §b检测到超限附魔，已降级到原版上限"
+  en: "§9[ACE for DRS] §bDetected overpowered enchantment, downgraded to vanilla maximum"
+
+enchant-detail:
+  zh: "§9[ACE for DRS] §b在 §f{location} §b发现 §f{item} §b附魔超限，已降级"
+  en: "§9[ACE for DRS] §bFound §f{item} §bat §f{location} §bwith overpowered enchants, downgraded"
+
+broadcast-illegal-item:
+  zh: "§9[ACE for DRS] §b{player} 的 §f{item} §b检测到违禁/异常物品，已替换为《滚木》"
+  en: "§9[ACE for DRS] §b{player}'s §f{item} §bdetected as illegal, replaced with 《Rolling Log》"
+
+broadcast-enchant-fix:
+  zh: "§9[ACE for DRS] §b{player} 的 §f{item} §b附魔超限，已降级"
+  en: "§9[ACE for DRS] §b{player}'s §f{item} §bhad overpowered enchants, downgraded"
+
+broadcast-delete:
+  zh: "§9[ACE for DRS] §b{player} 的 §f{item} §b已被删除（{reason}）"
+  en: "§9[ACE for DRS] §b{player}'s §f{item} §bhas been deleted ({reason})"
+
+scan-complete:
+  zh: "§9[ACE for DRS] §b已扫描 §f{player}§b，处理 §f{count} §b件物品"
+  en: "§9[ACE for DRS] §bScanned §f{player}§b, processed §f{count} §bitems"
+
+scan-complete-all:
+  zh: "§9[ACE for DRS] §b已扫描全部在线玩家，共处理 §f{count} §b件物品"
+  en: "§9[ACE for DRS] §bScanned all online players, processed §f{count} §bitems"
+
+player-not-online:
+  zh: "§9[ACE for DRS] §b玩家 §f{player} §b不在线"
+  en: "§9[ACE for DRS] §bPlayer §f{player} §bis not online"
+
+usage-check255:
+  zh: "§9[ACE for DRS] §b用法: /check255 <玩家名>"
+  en: "§9[ACE for DRS] §bUsage: /check255 <player>"
+
+usage-inspect:
+  zh: "§9[ACE for DRS] §b用法: /anti255 inspect <玩家名>"
+  en: "§9[ACE for DRS] §bUsage: /anti255 inspect <player>"
+
+reload-success:
+  zh: "§9[ACE for DRS] §b配置已重载！"
+  en: "§9[ACE for DRS] §bConfiguration reloaded!"
+
+help:
+  zh: "§9[ACE for DRS] §b用法:§r\n  §f/anti255 reload §7- 重载配置\n  §f/anti255 scan [玩家|all] §7- 扫描玩家\n  §f/anti255 inspect 玩家 §7- 检查详情\n  §f/anti255 stats §7- 查看统计\n  §f/check255 玩家 §7- 快速检查"
+  en: "§9[ACE for DRS] §bUsage:§r\n  §f/anti255 reload §7- Reload config\n  §f/anti255 scan [player|all] §7- Scan players\n  §f/anti255 inspect player §7- Inspect details\n  §f/anti255 stats §7- View statistics\n  §f/check255 player §7- Quick check"
+
+stats-detail:
+  zh: "§9══════ ACE for DRS 统计 ══════\n  §f在线玩家: §b{players}\n  §f累计扫描: §b{scans} §f次\n  §f附魔降级: §b{fixed} §f件\n  §f违禁替换: §b{replaced} §f件"
+  en: "§9══════ ACE for DRS Stats ══════\n  §fOnline players: §b{players}\n  §fTotal scans: §b{scans}\n  §fEnchants fixed: §b{fixed}\n  §fIllegal replaced: §b{replaced}"
+
+inspect-header:
+  zh: "§9══════ {player} 背包检查 ══════"
+  en: "§9══════ {player} Inventory Check ══════"
+
+inspect-ender-header:
+  zh: "§9══════ {player} 末影箱检查 ══════"
+  en: "§9══════ {player} Ender Chest Check ══════"
+
+plugin-enabled:
+  zh: "[ACE for DRS] 插件已启用: 在线检查间隔 {interval}s"
+  en: "[ACE for DRS] Plugin enabled: online check interval {interval}s"
+
+plugin-disabled:
+  zh: "[ACE for DRS] 插件已卸载"
+  en: "[ACE for DRS] Plugin unloaded"
+
+ground-item-removed:
+  zh: "§9[ACE for DRS] §b在 §f{location} §b发现了 §f{item} §b违禁品，已清除"
+  en: "§9[ACE for DRS] §bFound illegal item §f{item} §bat §f{location}§b, removed"
+
+deep-scan-fixed:
+  zh: "§9[ACE for DRS] §b在 §f{location} §b的 §f{item} §b发现恶意嵌套数据，已修正: §f{detail}"
+  en: "§9[ACE for DRS] §bFound malicious nested data in §f{item} §bat §f{location}§b, fixed: §f{detail}"
+
+ground-item-fixed:
+  zh: "§9[ACE for DRS] §b在 §f{location} §b发现了恶意物品 §f{item}§b，已修正异常数据: §f{detail}"
+  en: "§9[ACE for DRS] §bFound malicious item §f{item} §bat §f{location}§b, fixed abnormal data: §f{detail}"
+
+arrow-speed-alert:
+  zh: "§9[ACE for DRS] §b箭矢限速: §f{detail}"
+  en: "§9[ACE for DRS] §bArrow speed limit: §f{detail}"
+
+effect-downgraded:
+  zh: "§9[ACE for DRS] §b检测到违规状态效果，已从 §f{from} §b级降至原版最高 §f{to} §b级"
+  en: "§9[ACE for DRS] §bDetected an invalid status effect and downgraded it from level §f{from} §bto vanilla maximum §f{to}"
+
+illegal-item-hit:
+  zh: "§9[ACE for DRS] §b你的武器含有异常属性，攻击已被拦截（{detail}）"
+  en: "§9[ACE for DRS] §bYour weapon contains abnormal data; the hit was blocked ({detail})"
+
+illegal-item-use:
+  zh: "§9[ACE for DRS] §b该物品含有异常数据，已阻止使用（{detail}）"
+  en: "§9[ACE for DRS] §bThis item contains abnormal data; its use was blocked ({detail})"
+
+reason-illegal-material:
+  zh: "违禁物品"
+  en: "Illegal material"
+
+reason-abnormal-attribute:
+  zh: "异常属性"
+  en: "Abnormal attributes"
+
+reason-abnormal-potion:
+  zh: "异常药水"
+  en: "Abnormal potion"

@@ -1,0 +1,21 @@
+name: ACEforDRS
+version: 2.2.0
+main: com.acefordrs.Anti255Plugin
+api-version: '1.21'
+description: "Dual-system anti-cheat: 255 enchant downgrade + illegal item/abnormal NBT detection (Shulker Box, Bundle, custom items, stats, Slimefun whitelist)"
+author: anti255
+
+commands:
+  anti255:
+    description: ACE for DRS plugin management commands
+    usage: /anti255 <reload|scan [player|all]|inspect player|stats>
+    permission: anti255.admin
+  check255:
+    description: Check a player's inventory for 255 enchants and illegal items
+    usage: /check255 <player>
+    permission: anti255.admin
+
+permissions:
+  anti255.admin:
+    description: ACE for DRS admin permission (may use admin-only items; all other checks still apply)
+    default: op
