@@ -61,7 +61,7 @@ Java：**21+**
 
 ## 安装
 
-1. 下载 `ACEforDRS-2.2.0.jar`
+1. 下载 [ACEforDRS-2.2.0.jar](https://github.com/zhangyuhexht/ACEforDRS/releases/download/v2.2.0/ACEforDRS-2.2.0.jar)
 2. 放入服务端 `plugins/` 目录
 3. 启动服务器
 4. 根据需要修改 `plugins/ACEforDRS/config.yml`
